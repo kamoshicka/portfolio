@@ -4,59 +4,88 @@
 // タブ
 // タブ
 function GethashID(hashIDName) {
-  if (hashIDName) {
-      $('#label-container label').find('a').each(function () {
-          var idName = $(this).attr('href');
-          if (idName === hashIDName) {
-              var parentElm = $(this).parent();
-              $('#label-container label').removeClass("active");
-              $(parentElm).addClass("active");
-              $(".area").removeClass("is-active");
-              $(hashIDName).addClass("is-active");
-          }
-      });
+  if (hashIDName && hashIDName.startsWith('#')) {
+    // 対象となるタブとエリアをアクティブにする
+    var targetTab = $('#label-container label').find('a[href="' + hashIDName + '"]').parent();
+    $('#label-container label').removeClass("active");
+    $(targetTab).addClass("active");
+
+    $(".area").removeClass("is-active");
+    $(hashIDName).addClass("is-active");
   }
 }
 
 $(document).ready(function() {
-  // タブをクリックしたら
-  $('#label-container label a').on('click', function() {
-      var idName = $(this).attr('href');
-      GethashID(idName);
-      return false; // aタグを無効にする
+  // 内部ナビゲーションリンクの処理
+  $('a[href^="#"]').on("click", function(e) {
+      e.preventDefault();
+      var href = $(this).attr('href');
+      GethashID(href);
   });
 
-  // ページが読み込まれたらすぐに動かす
-  $('#label-container label:first-of-type').addClass("active");
-  $('.area:first-of-type').addClass("is-active");
+  // ページ読み込み時にハッシュを処理
   var hashName = location.hash;
-  GethashID(hashName);
+  if (hashName && hashName.startsWith('#')) {
+      GethashID(hashName);
+  }
+
+  // 外部リンクの処理
+  $('a[href^="http://"], a[href^="https://"]').on("click", function(e) {
+      // ここで何もしない場合は、このハンドラは実際には不要です。
+      // 外部リンクのデフォルト動作を保証するためには、ここに何も記述しないか、明示的に return true; を記述します。
+  });
+
+  setupTabs();
 });
+
+function GethashID(hashIDName) {
+  if (hashIDName && hashIDName.startsWith('#')) {
+      var targetTab = $('#label-container label').find('a[href="' + hashIDName + '"]').parent();
+      $('#label-container label').removeClass("active");
+      $(targetTab).addClass("active");
+
+      $(".area").removeClass("is-active");
+      $(hashIDName).addClass("is-active");
+  }
+}
+
+function setupTabs() {
+  $('.tab a').each(function() {
+      $(this).on('click', function(e) {
+          e.preventDefault();
+          var idName = $(this).attr('href');
+          if (idName.startsWith('#')) {
+              GethashID(idName);
+              $('.area').removeClass('is-active');
+              $(idName).addClass('is-active');
+              $('.tab').removeClass('active');
+              $(this).parent().addClass('active');
+          }
+      });
+  });
+}
+
+  // タブのセットアップ
+  // setupTabs();
 
 
 function setupTabs() {
-  // 共通の関数を使用してタブの切り替えを管理
-  function activateTab(sectionId) {
-      $(sectionId + ' a').on('click', function(e) {
-          e.preventDefault();
-          var idName = $(this).attr('href');
-          GethashID(idName);
+  $('.tab a').each(function() {
+    $(this).on('click', function(e) {
+      e.preventDefault();
+      var idName = $(this).attr('href');
+      if (idName.startsWith('#')) {
+        GethashID(idName);
+        $('.area').removeClass('is-active');
+        $(idName).addClass('is-active');
+        $('.tab').removeClass('active');
+        $(this).parent().addClass('active');
+      }
+    });
+  });
 
-          // 他のすべてのareaを非アクティブにし、選択されたareaをアクティブに
-          $('.area').removeClass('is-active');
-          $(idName).addClass('is-active');
 
-          // 他のすべてのタブを非アクティブにし、選択されたタブをアクティブに
-          $(sectionId + ' label').removeClass('active');
-          $(this).parent().addClass('active');
-      });
-  }
-
-  // 'Works' セクションと 'Skill' セクションにタブ機能を設定
-  activateTab('#works');
   activateTab('#skill');
-
-  // ページ読み込み時の初期状態設定
   $('#label-container label:first-of-type').addClass("active");
   $('.area:first-of-type').addClass("is-active");
   var hashName = location.hash;
@@ -66,6 +95,7 @@ function setupTabs() {
 $(document).ready(function() {
   setupTabs();
 });
+
 
 
 // カーソル
