@@ -12,7 +12,7 @@ body {
   font-family: "M PLUS Rounded 1c", sans-serif;
   font-style: normal;
   font-weight: 400;
-  background-color: #fff7e3;
+  background-color: #fffcf6;
   position: relative;
   opacity: 1;
   cursor: none !important;
@@ -46,15 +46,33 @@ a {
 .follower {
   width: 40px;
   height: 40px;
-  background-color: #ffffff;
+  background-color: #cdcdcd;
   opacity: 0.6;
   z-index: 1000;
 }
 
+.mask {
+  width: 100vw;
+  height: 54px;
+  background-color: #3a3a3a;
+  margin: 0 auto;
+}
+
 h1 {
-  padding-top: 100px;
-  margin-bottom: 60px;
-  font-size: 36px;
+  padding-left: 20vw;
+  display: inline-block;
+  font-size: 1.8vw;
+  font-weight: bold;
+  color: #a28d69;
+  line-height: 54px;
+  letter-spacing: 0.2em;
+}
+
+h2 {
+  font-size: 1.8vw;
+  font-weight: bold;
+  color: #a28d69;
+  letter-spacing: 0.2em;
 }
 
 .area {
@@ -70,6 +88,12 @@ h1 {
           animation-duration: 3.5s;
   -webkit-animation-fill-mode: forwards;
           animation-fill-mode: forwards;
+}
+
+#vanta {
+  z-index: -1;
+  width: 100%;
+  height: 400px;
 }
 
 /*  文字パラパラアニメーション   */
@@ -169,30 +193,41 @@ h1 {
 }
 
 header {
-  background-image: url(images/image4.JPG);
+  position: relative;
+  padding: 0 0 50px 0;
 }
 header .header-bar-inner {
-  position: absolute;
+  display: flex;
+  gap: 15vw;
+  position: relative;
   background: #fff transparent;
   border-radius: 6px;
-  display: flex;
+  margin: 0 auto;
 }
-header h1 {
-  padding: 0;
+header #header-title {
+  color: black;
+}
+header .label-container {
+  right: 0;
+}
+header nav {
+  padding-top: 50px;
+  font-weight: lighter;
+  font-size: 24px;
+  display: inline-block;
+  right: 0;
+  top: 0;
+}
+header h2 {
+  position: relative;
+  margin: 0;
+  padding-left: 50px;
+  margin-top: 50px;
+  bottom: 0px;
+  left: 50px;
 }
 header .container {
   padding: 200px 100px 200px 0;
-  display: flex;
-  flex-direction: row;
-  gap: 20%;
-}
-header #label-container {
-  display: flex;
-  flex-direction: row;
-  margin-left: 150px;
-  position: relative;
-  font-weight: lighter;
-  font-size: 24px;
 }
 header .checkBtn {
   display: none;
@@ -200,9 +235,14 @@ header .checkBtn {
 header label {
   margin-left: 3rem;
   position: relative;
+  font-size: 1.8vw;
+  font-weight: bold;
+  color: #a28d69;
+  letter-spacing: 0.2em;
+  z-index: 99;
 }
 header label::before {
-  background: #000000;
+  background: #a28d69;
   content: "";
   width: 100%;
   height: 2px;
@@ -259,6 +299,7 @@ header label:hover::before {
 .skill-main {
   display: flex;
   flex-direction: row;
+  margin-top: 100px;
   gap: 36px;
 }
 
@@ -308,7 +349,7 @@ header label:hover::before {
 }
 
 footer {
-  background: #ffffff;
+  background-color: #3a3a3a;
   width: 100%;
   margin: 100px auto 60px auto;
 }
@@ -327,12 +368,14 @@ footer #label-container .checkBtn {
 footer #label-container label {
   margin: 24px;
   gap: 24px;
-  font-weight: lighter;
-  font-size: 24px;
+  font-size: 1.8vw;
+  font-weight: bold;
+  color: #a28d69;
+  letter-spacing: 0.2em;
   position: relative;
 }
 footer #label-container label::before {
-  background: #000000;
+  background: #a28d69;
   content: "";
   width: 100%;
   height: 2px;
@@ -352,5 +395,28 @@ footer #label-container label:hover::before {
 small {
   font-size: 10px;
   padding-left: 100px;
+  color: #a28d69;
+}
+
+@media screen and (max-width: 768px) {
+  header .header-bar-inner {
+    width: 100%;
+  }
+  header nav {
+    width: 100%;
+    top: 127px;
+  }
+  header nav #label-container label {
+    margin: 0;
+    position: relative;
+    float: left;
+    width: 50%;
+    border-left: 1px solid rgb(157, 157, 157);
+    text-align: center;
+  }
+  header nav #label-container label a {
+    width: 100%;
+    padding: 10px 0;
+  }
 }
 /*# sourceMappingURL=style.css.map */
