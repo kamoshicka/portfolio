@@ -5,6 +5,7 @@ body {
   height: 100%;
   margin: 0;
   text-decoration: none;
+  
 }
 body {
   font-family: 'M PLUS Rounded 1c', sans-serif;
@@ -14,8 +15,12 @@ body {
   position: relative;
   opacity: 1;
   cursor: none!important;
+  z-index: -99;
 } 
 
+section {
+  padding-bottom: 100px;
+}
 a {
   cursor: none!important;
   text-decoration: none;
@@ -51,24 +56,26 @@ a {
 
 .mask {
   width: 100vw;
-  height: 54px;
+  height: 72px;
   background-color: #3a3a3a;
   margin: 0 auto;
+  h1 {
+    padding-left: 20vw;
+    display: inline-block;
+    font-size: 36px;
+    font-weight: bold;
+    color: #a28d69;
+    line-height: 72px;
+    letter-spacing: .2em;
+  }
 }
-h1 {
-  padding-left: 20vw;
-  display: inline-block;
-  font-size: 1.8vw;
-  font-weight: bold;
-  color: #a28d69;
-  line-height: 54px;
-  letter-spacing: .2em;
-}
+
+
 
 h2 {
   font-size: 1.8vw;
   font-weight: bold;
-  color: #a28d69;
+  border-left: solid 10px ;
   letter-spacing: .2em;
 }
 
@@ -91,6 +98,17 @@ h2 {
   z-index: -1;
   width: 100%;
   height: 400px;
+}
+
+.slime {
+  position: absolute;
+  z-index: -2;
+  margin-top: 36px;
+  left: 10vw;
+  background: rgb(255, 243, 210);
+  display: inline-block;
+  padding: 6rem 10rem;
+  border-radius: 50%;
 }
 /*  文字パラパラアニメーション   */ 
 .eachTextAnime span{opacity: 0;}
@@ -155,15 +173,14 @@ h2 {
 
 header {
   position: relative;
-  // background-image: url(images/image4.JPG);
-  padding: 0 0 50px 0;
+  background-color:#fffcf6;
   .header-bar-inner {
     display: flex;
     gap: 15vw;
-    position: relative;
-    background: #fff transparent;
+    background-color:#fffcf6;
     border-radius: 6px;
-    // max-width: 768px;
+    z-index: 999;
+    width: 100%;
     margin: 0 auto;
   }
 
@@ -174,18 +191,17 @@ header {
     right: 0;
   }
   nav {
-    padding-top: 50px;
     font-weight: lighter;
     font-size: 24px;
     display: inline-block;
     right: 0;
     top: 0;
+    line-height: 75px;
   }
   h2 {
     position: relative;
     margin: 0;
     padding-left: 50px;
-    margin-top: 50px;
     bottom: 0px;
     left: 50px;
 
@@ -236,13 +252,31 @@ header {
     
   }
 
+  #fixed-header {
+    position: fixed;
+    top: -90px;
+  }
+
+  .is-show {
+    top: 0;
+  }
 
 #about {
+
+  
+  .about-text {
+    margin-top: 72px;
+    line-height: 2rem;
+  }
   .about-profile {
     display: flex;
     flex-direction: row;
     margin-top: 60px;
 
+    img {
+      opacity: .7;
+      border-radius: 16px;
+    }
     dl {
       margin-left: 30px;
       line-height: 32px;
@@ -262,15 +296,20 @@ header {
 }
 
 #skill {
+  background-image: url(images/tree_bark.png);
   h2 {
     margin-bottom: 36px;
-    
+    border: none;
+  }
+  img {
+    margin-right: 18px;
+    float: left;
   }
 
   .skill-part {
     background-color: #fff;
     padding: 30px 8px 30px 8px;
-    width: 30%;
+    width: 100%;
     background-image:
       linear-gradient(to right, #000, #000 3px, transparent 3px, transparent 8px),
       linear-gradient(to bottom, #000, #000 3px, transparent 3px, transparent 8px),  
@@ -301,7 +340,7 @@ header {
 
 .skill-main {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   margin-top: 100px;
   gap: 36px;
 }
@@ -349,6 +388,14 @@ header {
       transition: all 0.2s ease;
     }
 
+    .works-list:nth-child(even) {
+      display: flex;
+      flex-direction: row-reverse;
+    }
+    .works-list:nth-child(odd) {
+      display: flex;
+    }
+
     .mask-caption {
       text-align: center;
       padding-top: 80px;
@@ -366,7 +413,7 @@ header {
 footer {
   background-color: #3a3a3a;
   width: 100%;
-  margin: 100px auto 60px auto;
+  margin: 0 auto 60px auto;
 
   nav {
     padding-bottom: 60px;

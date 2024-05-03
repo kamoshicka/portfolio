@@ -7,6 +7,7 @@
   <link rel="icon" href="images/favicon (1).ico">
   <link rel="stylesheet" href="reset.css">
   <link rel="stylesheet" href="style.css">
+  <link href="https://unpkg.com/pattern.css" rel="stylesheet">
   <title>Portfolio | Reiji Onawa</title>
 
 </head>
@@ -40,13 +41,40 @@
       </div>
     </div>
   </header>
+
+  <div id="fixed-header">
+    <header>
+    <div class="header-bar">
+      <div class="header-bar-inner">
+        <h2 id="header-title">
+          REIJI <br>ONAWA<br>Portfolio site
+        </h1>
+        <nav>
+          <div id="label-container">
+            <input type="checkbox" class="checkBtn" checked="true">
+            <label id="label-about" for="for-about"><a href="#about">About</a></label>
+            <input type="checkbox" class="checkBtn">
+            <label id="label-skill" for="for-skill"><a href="#skill">Skill</a></label>
+            <input type="checkbox" class="checkBtn">
+            <label id="label-works" for="for-works"><a href="#works">Works</a></label>
+            <input type="checkbox" class="checkBtn">
+            <label><a class="mailtoui" href="mailto:evf415@gmail.com">Contact</a></label>
+          </div>
+        </nav>
+      </div>
+    </div>
+  </header>
+  </div>
+
   <div id="vanta"></div>
 
   <section id="about" class="area is-active">
     <div class="mask">
     <h1>ABOUT</h1>
     </div>
+    <div class="slime"></div>
     <div class="container">
+      
     <p class="about-text eachTextAnime">
       東京でWeb制作をしております。<br>
       前職はリゾートホテルの接客・調理・企画など幅広く活躍<br>
@@ -57,7 +85,7 @@
     </p>
 
     <div class="about-profile">
-      <img src="images/image1.jpg" alt="image1" width="200" opacity="0.6">
+      <img src="images/image1.jpg" alt="image1" style width="200" opacity="0.6" border-radius="10%">
       <dl>
         <dt>名前：</dt>
         <dd>大縄 嶺二 Onawa Reiji</dd>
@@ -75,35 +103,36 @@
     </div>
   </section>
 
-  <section id="skill" class="area">
+  <section id="skill" class="area pattern-horizontal-lines-xl">
     <div class="mask">
     <h1>Skill</h1>
   </div>
     <div class="skill-main container">
       <div class="skill-part">
-        <h2>HTML , CSS , SCSS</h2>
+        <h2><img src="images/skill1.png" width="72">HTML<br>CSS<br>SCSS</h2>
         <p>デザインやコーディングにおいて<br>
           「誰が見ても分かりやすい」を意識しています。<br>
           モダンCSSの技術キャッチアップ等も欠かさず行うことで<br>
           より柔軟なWEBサイト作成に努めております。</p>
       </div>
       <div class="skill-part">
-        <h2>JS , TS , jQuery</h2>
+        <h2><img src="images/skill2.png" width="72">Javascript<br>jQuery</h2>
         <p>WEBサイトに自由な動きをつける技術を用いて<br>
           クライアントの様々な要望に応えられるよう<br>
-          日々キャッチアップは欠かしません。</p>
+          日々の学習は欠かしません。</p>
       </div>
       <div class="skill-part">
-        <h2>React</h2>
+        <h2><img src="images/skill3.png" width="72">React<br>Typescript</h2>
         <p>チームとして大規模なWEB制作にも携われるよう学習しております。<br>
           現状のスキルレベルは<br>
           <strong><a href="#works">Works</a></strong>のニュースサイトとNetflixのクローンサイトをご覧ください。
         </p>
       </div>
+      
     </div>
   </section>
 
-  <section id="works" class=" area">
+  <section id="works" class="area pattern-cross-dots-xl">
     <div class="mask">
     <h1>Works</h1>
     </div>
