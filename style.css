@@ -315,7 +315,7 @@ header label:hover::before {
   background-image: url(images/tree_bark.png);
 }
 #skill p {
-  padding-top: 32px;
+  padding: 32px;
 }
 #skill h2 {
   margin-bottom: 36px;
@@ -344,6 +344,7 @@ header label:hover::before {
 }
 
 .container-middle {
+  margin-right: 10%;
   align-self: flex-end;
 }
 .container-middle .skill-part {
