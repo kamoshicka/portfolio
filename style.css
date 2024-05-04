@@ -308,7 +308,7 @@ header label:hover::before {
   width: 150px;
   height: 150px;
   left: auto;
-  right: 20%;
+  right: 30%;
 }
 
 #skill {
@@ -351,6 +351,10 @@ header label:hover::before {
 .container-middle .skill-part {
   width: 100% !important;
 }
+.container-middle .slime {
+  background: #fffde7;
+}
+
 #middle {
   width: 100%;
   align-self: flex-end;
