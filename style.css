@@ -274,11 +274,6 @@ header label:hover::before {
   transform: scale(1, 1);
 }
 
-#fixed-header {
-  position: fixed;
-  top: -90px;
-}
-
 .is-show {
   top: 0;
 }
@@ -309,9 +304,18 @@ header label:hover::before {
   float: right;
   width: 75%;
 }
+#about .about-profile .slime {
+  width: 150px;
+  height: 150px;
+  left: auto;
+  right: 20%;
+}
 
 #skill {
   background-image: url(images/tree_bark.png);
+}
+#skill p {
+  padding-top: 32px;
 }
 #skill h2 {
   margin-bottom: 36px;
@@ -324,16 +328,30 @@ header label:hover::before {
 #skill .skill-part {
   background-color: #fff;
   padding: 30px 8px 30px 8px;
-  width: 100%;
+  width: 60%;
   background-image: linear-gradient(to right, #000, #000 3px, transparent 3px, transparent 8px), linear-gradient(to bottom, #000, #000 3px, transparent 3px, transparent 8px), linear-gradient(to left, #000, #000 3px, transparent 3px, transparent 8px), linear-gradient(to top, #000, #000 3px, transparent 3px, transparent 8px);
   background-size: 8px 2px, 2px 8px, 8px 2px, 2px 8px;
   background-position: left top, right top, right bottom, left bottom;
   background-repeat: repeat-x, repeat-y, repeat-x, repeat-y;
 }
+#skill .skill-part img {
+  padding-bottom: 32px;
+}
 #skill .skill-part strong {
   font-size: 18px;
   font-weight: bold;
   border-bottom: solid;
+}
+
+.container-middle {
+  align-self: flex-end;
+}
+.container-middle .skill-part {
+  width: 100% !important;
+}
+#middle {
+  width: 100%;
+  align-self: flex-end;
 }
 
 .skill-main {

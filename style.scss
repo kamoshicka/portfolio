@@ -252,11 +252,6 @@ header {
     
   }
 
-  #fixed-header {
-    position: fixed;
-    top: -90px;
-  }
-
   .is-show {
     top: 0;
   }
@@ -292,11 +287,21 @@ header {
         width: 75%;
       }
     }
+    .slime {
+      width: 150px;
+      height: 150px;
+      left: auto;
+      right: 20%;
+    }
   }
 }
 
 #skill {
   background-image: url(images/tree_bark.png);
+
+  p {
+    padding-top: 32px;
+  }
   h2 {
     margin-bottom: 36px;
     border: none;
@@ -309,7 +314,7 @@ header {
   .skill-part {
     background-color: #fff;
     padding: 30px 8px 30px 8px;
-    width: 100%;
+    width: 60%;
     background-image:
       linear-gradient(to right, #000, #000 3px, transparent 3px, transparent 8px),
       linear-gradient(to bottom, #000, #000 3px, transparent 3px, transparent 8px),  
@@ -330,12 +335,27 @@ header {
       repeat-y,
       repeat-x,
       repeat-y;
+      img {
+        padding-bottom: 32px;
+      }
     strong{
       font-size: 18px;
       font-weight: bold;
       border-bottom: solid;
     }
   }
+}
+.container-middle {
+  align-self: flex-end;
+  .skill-part {
+    width: 100% !important;
+  }
+  .slime {
+  }
+}
+#middle {
+  width: 100%;
+  align-self: flex-end;
 }
 
 .skill-main {

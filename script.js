@@ -10,7 +10,7 @@ window.onload = function() {
   }, Math.max(0, MINIMUM_DISPLAY_TIME - (Date.now() - loadTime)));
 }
 
-const slime = document.querySelector('.slime');
+const slimes = document.querySelectorAll('.slime');
 
 const keyframes = {
   borderRadius: [
@@ -26,15 +26,6 @@ const options = {
   iterations: Infinity,
 };
 
-slime.animate(keyframes, options);
-
-document.addEventListener('DOMContentLoaded', function() {
-  const fh = document.getElementById('fixed-header');
-  window.addEventListener('scroll', () => {
-    if (window.scrollY > 100) {
-      fh.classList.add('is-show');
-    } else {
-      fh.classList.remove('is-show');
-    }
-  });
+slimes.forEach(slime => {
+  slime.animate(keyframes, options);
 });
