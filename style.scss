@@ -718,16 +718,31 @@ small {
       margin: 48px 0 0 0;
       left: 0;
     }
+    .about-text {
+      line-height: 2rem;
+      width: 85%;
+      margin: 48px auto;
+    }
     .about-profile {
       flex-direction: column;
       dl{
       margin: 24px 0 0 0;
       dt {
-        width: 30%;
+        width: 100%;
+        display: inline-block;
+        text-align: center;
+        border-top: 1px solid #d9d9d9;
+        padding-top: 8px;
       }
       dd {
-        width: 70%;
+        width: 100%;
+        display: inline-block;
+        text-align: center;
+        padding: 18px;
       }
+      }
+      img {
+        margin: 0 auto;
       }
       .slime {
         margin: 24px 0 0 0;
