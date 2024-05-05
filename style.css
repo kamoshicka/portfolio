@@ -407,6 +407,9 @@ header label:hover::before {
   gap: 36px;
 }
 
+#works .container {
+  width: 95%;
+}
 #works ul {
   display: flex;
   flex-direction: row;
@@ -414,7 +417,7 @@ header label:hover::before {
   gap: 48px;
 }
 #works ul li {
-  width: 40%;
+  width: 40vw;
   height: auto;
   position: relative;
   box-shadow: 1px 1px 8px rgba(0, 0, 0, 0.12);
@@ -511,7 +514,7 @@ small {
   color: #a28d69;
 }
 
-@media screen and (max-width: 666px) {
+@media screen and (max-width: 1000px) {
   .container {
     width: 80%;
   }
