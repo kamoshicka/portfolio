@@ -384,7 +384,8 @@ header label:hover::before {
 }
 
 .container-middle {
-  margin-right: 10%;
+  width: 60%;
+  margin-right: -20%;
   align-self: flex-end;
 }
 .container-middle .skill-part {
@@ -510,7 +511,7 @@ small {
   color: #a28d69;
 }
 
-@media screen and (min-width: 666px) and (max-width: 768px) {
+@media screen and (max-width: 666px) {
   .container {
     width: 80%;
   }
@@ -552,16 +553,17 @@ small {
     width: 90%;
   }
   #skill .container .container-middle {
-    margin-right: 0;
+    width: 90%;
     padding: 0;
+    margin: 0 auto;
   }
   #skill .container .container-middle .slime {
-    background: #fffde7;
-    left: 0px;
-    padding: 75px;
+    margin-top: -38px;
+    padding: 54px;
   }
   #skill .container .skill-part {
-    width: 80%;
+    margin: 0 auto;
+    width: 90%;
   }
   #skill .container .skill-part p {
     padding: 32px 24px 0 14px;
@@ -670,10 +672,10 @@ small {
   }
   #skill #middle {
     margin-top: 140px;
-    width: 100%;
   }
   #skill .skill-part {
-    width: 100%;
+    width: 90%;
+    margin: 0 auto;
   }
   #skill .skill-part h2 {
     font-size: 20px;
