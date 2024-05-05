@@ -202,7 +202,6 @@ function EachTextAnimeControl() {
   });
 }
 
-// This function initializes text animations on load
 function initTextAnimation() {
   $(".eachTextAnime").each(function() {
     var element = $(this);
@@ -210,20 +209,33 @@ function initTextAnimation() {
     var lines = html.split('<br>');
     var newHtml = lines.map(function(line) {
       var spans = line.split('').map(function(char, index) {
-        var delay = index * 0.1;  // Delay increases by 0.1s for each character
+        var delay = index * 0.1; 
         return '<span style="animation-delay:' + delay + 's;">' + char + '</span>';
       }).join('');
       return spans;
-    }).join('<br>');  // Rejoin lines with <br> tags
+    }).join('<br>');  
     element.html(newHtml);
   });
 }
 
-// Run animations on scroll
 $(window).scroll(EachTextAnimeControl);
 
-// Initialize animations on load
 $(window).on('load', function() {
   initTextAnimation();
   EachTextAnimeControl();
+});
+
+
+// skillsアニメーション
+$(window).on('scroll resize', function() {
+  $('.blurTrigger').each(function() {
+    var elemPos = $(this).offset().top - 100;
+    var scroll = $(window).scrollTop();
+    var windowHeight = $(window).height();
+    if (scroll >= elemPos - windowHeight) {
+      $(this).addClass('blur');
+    } else {
+      $(this).removeClass('blur');
+    }
+  });
 });

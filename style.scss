@@ -1,48 +1,52 @@
 @import url('https://fonts.googleapis.com/css?family=M+PLUS+Rounded+1c');
+
 html,
 body {
   width: 100%;
   height: 100%;
   margin: 0;
   text-decoration: none;
-  
+
 }
+
 body {
   font-family: 'M PLUS Rounded 1c', sans-serif;
   font-style: normal;
   font-weight: 400;
-  background-color:#fffcf6;
+  background-color: #fffcf6;
   position: relative;
   opacity: 1;
-  cursor: none!important;
+  cursor: none !important;
   z-index: -99;
-} 
+}
 
 section {
   padding-bottom: 100px;
 }
+
 a {
-  cursor: none!important;
+  cursor: none !important;
   text-decoration: none;
 }
 
 .cursor,
 .follower {
   border-radius: 50%;
-  position: absolute; 
+  position: absolute;
   top: 0;
   left: 0;
   pointer-events: none;
-  cursor: none; 
+  cursor: none;
 }
 
 .cursor {
   width: 8px;
   height: 8px;
   background-color: #8f8f8f;
-  z-index: 1001; 
+  z-index: 1001;
+
   is-active-cursor {
-    cursor:none;
+    cursor: none;
   }
 }
 
@@ -51,7 +55,7 @@ a {
   height: 40px;
   background-color: #cdcdcd;
   opacity: 0.6;
-  z-index: 1000; 
+  z-index: 1000;
 }
 
 .mask {
@@ -59,6 +63,7 @@ a {
   height: 72px;
   background-color: #3a3a3a;
   margin: 0 auto;
+
   h1 {
     padding-left: 20vw;
     display: inline-block;
@@ -75,23 +80,23 @@ a {
 h2 {
   font-size: 1.8vw;
   font-weight: bold;
-  border-left: solid 10px ;
+  border-left: solid 10px;
   letter-spacing: .2em;
 }
 
 
-  .area {
+.area {
   display: none;
   opacity: 0;
-  
+
 }
 
-  .is-active{
-  display:block;
-  animation-name:displayAnime;
+.is-active {
+  display: block;
+  animation-name: displayAnime;
   animation-duration: 3.5s;
   animation-fill-mode: forwards;
-  
+
 }
 
 #vanta {
@@ -110,18 +115,57 @@ h2 {
   padding: 6rem 10rem;
   border-radius: 50%;
 }
-/*  文字パラパラアニメーション   */ 
-.eachTextAnime span{opacity: 0;}
-.eachTextAnime.appeartext span{ animation:text_anime_on 1s ease-out forwards; }
-@keyframes text_anime_on {
-	0% {opacity:0;}
-	100% {opacity:1;}
+
+/*  文字パラパラアニメーション   */
+.eachTextAnime span {
+  opacity: 0;
 }
+
+.eachTextAnime.appeartext span {
+  animation: text_anime_on 1s ease-out forwards;
+}
+
+@keyframes text_anime_on {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+/* skillsアニメーション */
+.blur {
+  animation-name: blurAnime;
+  animation-duration: 2s;
+  animation-fill-mode: forwards;
+}
+
+@keyframes blurAnime {
+  from {
+    filter: blur(10px);
+    transform: scale(1.02);
+    opacity: 0;
+  }
+
+  to {
+    filter: blur(0);
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+.blurTrigger {
+  opacity: 0;
+}
+
 /* タブ切り替えアニメーション */
 @keyframes displayAnime {
   from {
     opacity: 0;
   }
+
   to {
     opacity: 1;
   }
@@ -131,7 +175,7 @@ h2 {
 #loading {
   position: absolute;
   width: 100%;
-  height: 100vw;
+  height: 100%;
   transition: all 1s;
   background-color: rgb(255, 236, 196);
   position: fixed;
@@ -173,11 +217,12 @@ h2 {
 
 header {
   position: relative;
-  background-color:#fffcf6;
+  background-color: #fffcf6;
+
   .header-bar-inner {
     display: flex;
     gap: 15vw;
-    background-color:#fffcf6;
+    background-color: #fffcf6;
     border-radius: 6px;
     z-index: 999;
     width: 100%;
@@ -187,9 +232,11 @@ header {
   #header-title {
     color: black;
   }
+
   .label-container {
     right: 0;
   }
+
   nav {
     font-weight: lighter;
     font-size: 24px;
@@ -198,6 +245,7 @@ header {
     top: 0;
     line-height: 75px;
   }
+
   h2 {
     position: relative;
     margin: 0;
@@ -206,63 +254,58 @@ header {
     left: 50px;
 
   }
+
   .container {
     padding: 200px 100px 200px 0;
   }
 
-  // #label-container {
-  //   display: flex;
-  //   flex-direction: row;
-  //   align-items: flex-end;
-  //   position: relative;
-  //   font-weight: lighter;
-  //   font-size: 24px;
-  //   }
-
-    .checkBtn {
-      display: none;
-    }
-
-    label {
-      margin-left: 3rem;
-      position: relative;
-      font-size: 1.8vw;
-      font-weight: bold;
-      color: #a28d69;
-      letter-spacing: .2em;
-      z-index: 99;
-    }
-    label::before {
-      background: #a28d69;
-      content: '';
-      width: 100%;
-      height: 2px;
-      position: absolute;
-      left: 0;
-      bottom: 0;
-      margin: auto;
-      transform-origin: right top;
-      transform: scale(0, 1);
-      transition: transform .3s;
-    }
-    label:hover::before {
-      transform-origin: left top;
-      transform: scale(1, 1);
-    }
-    
+  .checkBtn {
+    display: none;
   }
 
-  .is-show {
-    top: 0;
+  label {
+    margin-left: 3rem;
+    position: relative;
+    font-size: 1.8vw;
+    font-weight: bold;
+    color: #a28d69;
+    letter-spacing: .2em;
+    z-index: 99;
   }
+
+  label::before {
+    background: #a28d69;
+    content: '';
+    width: 100%;
+    height: 2px;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    margin: auto;
+    transform-origin: right top;
+    transform: scale(0, 1);
+    transition: transform .3s;
+  }
+
+  label:hover::before {
+    transform-origin: left top;
+    transform: scale(1, 1);
+  }
+
+}
+
+.is-show {
+  top: 0;
+}
 
 #about {
 
-  
+
   .about-text {
     margin-top: 72px;
     line-height: 2rem;
   }
+
   .about-profile {
     display: flex;
     flex-direction: row;
@@ -272,6 +315,7 @@ header {
       opacity: .7;
       border-radius: 16px;
     }
+
     dl {
       margin-left: 30px;
       line-height: 32px;
@@ -287,6 +331,7 @@ header {
         width: 75%;
       }
     }
+
     .slime {
       width: 150px;
       height: 150px;
@@ -300,13 +345,15 @@ header {
   background-image: url(images/tree_bark.png);
 
   p {
-    padding:32px 24px 24px;
-  
+    padding: 32px 24px 24px;
+
   }
+
   h2 {
     margin-bottom: 36px;
     border: none;
   }
+
   img {
     margin-right: 18px;
     float: left;
@@ -319,8 +366,8 @@ header {
     width: 60%;
     background-image:
       linear-gradient(to right, #000, #000 3px, transparent 3px, transparent 8px),
-      linear-gradient(to bottom, #000, #000 3px, transparent 3px, transparent 8px),  
-      linear-gradient(to left, #000, #000 3px, transparent 3px, transparent 8px), 
+      linear-gradient(to bottom, #000, #000 3px, transparent 3px, transparent 8px),
+      linear-gradient(to left, #000, #000 3px, transparent 3px, transparent 8px),
       linear-gradient(to top, #000, #000 3px, transparent 3px, transparent 8px);
     background-size:
       8px 2px,
@@ -337,26 +384,32 @@ header {
       repeat-y,
       repeat-x,
       repeat-y;
-      img {
-        padding-bottom: 32px;
-      }
-    strong{
+
+    img {
+      padding-bottom: 32px;
+    }
+
+    strong {
       font-size: 18px;
       font-weight: bold;
       border-bottom: solid;
     }
   }
 }
+
 .container-middle {
   margin-right: 10%;
   align-self: flex-end;
+
   .skill-part {
     width: 100% !important;
   }
+
   .slime {
     background: #fffde7;
   }
 }
+
 #middle {
   width: 100%;
   align-self: flex-end;
@@ -382,22 +435,22 @@ header {
       height: auto;
       position: relative;
       box-shadow: 1px 1px 8px rgba(0, 0, 0, 0.12);
-      margin: 2em auto; 
-      background-color:#e1e1e1;
-      padding:2em; 
+      margin: 2em auto;
+      background-color: #e1e1e1;
+      padding: 2em;
       border-radius: 8px;
       border: 2px solid #b5b5b5;
 
       .box-title {
-        background-color:#fff; 
+        background-color: #fff;
         font-size: 1em;
-        font-weight:800;
-        color: #666; 
+        font-weight: 800;
+        color: #666;
         padding: 0 5px;
         line-height: 1;
-        position:absolute;	
-        top: -5px; 
-        left: 20px; 
+        position: absolute;
+        top: -5px;
+        left: 20px;
       }
     }
 
@@ -417,6 +470,7 @@ header {
       display: flex;
       flex-direction: row-reverse;
     }
+
     .works-list:nth-child(odd) {
       display: flex;
     }
@@ -443,24 +497,27 @@ footer {
   nav {
     padding-bottom: 60px;
   }
+
   #label-container {
     display: flex;
     flex-direction: row;
     justify-content: flex-end;
     margin-right: 200px;
+
     .checkBtn {
       display: none;
     }
 
     label {
       margin: 24px;
-      gap: 24px;    
+      gap: 24px;
       font-size: 1.8vw;
       font-weight: bold;
       color: #a28d69;
       letter-spacing: .2em;
       position: relative;
     }
+
     label::before {
       background: #a28d69;
       content: '';
@@ -474,43 +531,253 @@ footer {
       transform: scale(0, 1);
       transition: transform .3s;
     }
+
     label:hover::before {
       transform-origin: left top;
       transform: scale(1, 1);
     }
-    }
   }
+}
 
-  small {
-    font-size: 10px;
-    padding-left: 100px;
-    color: #a28d69;
+small {
+  font-size: 10px;
+  padding-left: 100px;
+  color: #a28d69;
+}
+
+// 768px
+// 768px
+// 768px
+// 768px
+@media screen and (min-width: 666px) and (max-width: 768px) {
+  .container {
+    width: 80%;
   }
-
-  // 768px
-// 768px
-// 768px
-// 768px
-@media screen and (max-width: 768px){ 
   header {
+    #header-title {
+      height: 60px;
+      display: block;
+      padding-left: 10px;
+      width: 30%;
+      line-height: 18px;
+      left: 0;
+      margin: 24px 0 24px 24px;
+    }
+
     .header-bar-inner {
       width: 100%;
+      display: block;
     }
+
     nav {
+      border-bottom: 1px solid #cccccc;
       width: 100%;
-      top: 127px;
+
       #label-container {
         label {
+          border-top: 1px solid #cccccc;
           margin: 0;
           position: relative;
           float: left;
           width: 50%;
           border-left: 1px solid rgb(157, 157, 157);
           text-align: center;
+
           a {
             width: 100%;
             padding: 10px 0;
           }
+        }
+      }
+    }
+  }
+
+  #about {
+    .container {
+      .about-profile {
+        .slime {
+          left: 60%;
+          right: 0;
+        }
+      }
+    }
+  }
+
+  #skill {
+    .container {
+      width: 90%;
+      .container-middle {
+        margin-right: 0;
+        padding: 0;
+        .slime {
+          background: #fffde7;
+          left: 0px;
+          padding: 75px;
+        }
+      }
+      .skill-part {
+        width: 80%;
+        p{
+          padding: 32px 24px 0 14px;
+        }
+      }
+    }
+  }
+
+  #works {
+    .works-list {
+      flex-direction: column;
+    }
+    ul {
+      li {
+        width: 80%;
+      }
+    }
+  }
+
+  footer {
+    nav{
+      #label-container {
+        justify-content: center;
+        margin: 3%;
+        label {
+          gap: 24px;
+          font-size: 4vw;
+          font-weight: bold;
+          color: #a28d69;
+          letter-spacing: 0.2em;
+          position: relative;
+        }
+      }
+    }
+  }
+}
+
+// 666px
+// 666px
+// 666px
+// 666px
+@media screen and (min-width: 370px) and (max-width: 665px){
+  .container {
+    width: 100%;
+  }
+
+  .mask {
+    h1 {
+      padding-left: 5vw;
+    }
+  }
+  header {
+
+
+    .header-bar-inner {
+      width: 100%;
+      display: block;
+      h2 {
+        font-size:18px;
+        line-height: 26px;
+      }
+      #header-title {
+        display: block;
+        width: 100%;
+        height: 60px;
+        margin: 24px 0 24px 24px;
+        padding-left: 10px;
+        line-height: 18px;
+        left: 0;
+      }
+    }
+
+    nav {
+      border-bottom: 1px solid #cccccc;
+      width: 100%;
+
+      #label-container {
+        label {
+          border-top: 1px solid #cccccc;
+          margin: 0;
+          position: relative;
+          float: left;
+          width: 50%;
+          border-left: 1px solid rgb(157, 157, 157);
+          text-align: center;
+          font-size: 14px;
+          font-weight: lighter;
+
+          a {
+            width: 100%;
+            padding: 10px 0;
+          }
+        }
+      }
+    }
+  }
+
+  #about {
+    .slime {
+      margin: 48px 0 0 0;
+      left: 0;
+    }
+    .about-profile {
+      flex-direction: column;
+      dl{
+      margin: 24px 0 0 0;
+      dt {
+        width: 30%;
+      }
+      dd {
+        width: 70%;
+      }
+      }
+      .slime {
+        margin: 24px 0 0 0;
+        padding: 0;
+        right: 20px;
+      }
+    }
+  }
+  #skill {
+    .slime {
+      margin-top: -24px;
+        padding: 24px;
+    }
+    #middle {
+      margin-top: 140px;
+      width: 100%;
+    }
+    .skill-part {
+      width: 100%;
+      h2 {
+        font-size: 20px;
+      }
+    }
+  }
+
+  #works {
+    .works-list {
+      flex-direction: column;
+    }
+    ul {
+      gap: 0;
+      li {
+        width: 80%;
+      }
+    }
+  }
+
+  footer {
+    nav{
+      #label-container {
+        justify-content: center;
+        margin: 0 8px 0 8px;
+        label {
+          margin: 3%;
+          gap: 24px;
+          font-size: 4vw;
+          font-weight: bold;
+          color: #a28d69;
+          letter-spacing: 0.2em;
+          position: relative;
         }
       }
     }

@@ -138,6 +138,45 @@ h2 {
     opacity: 1;
   }
 }
+/* skillsアニメーション */
+.blur {
+  -webkit-animation-name: blurAnime;
+          animation-name: blurAnime;
+  -webkit-animation-duration: 2s;
+          animation-duration: 2s;
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
+}
+
+@-webkit-keyframes blurAnime {
+  from {
+    filter: blur(10px);
+    transform: scale(1.02);
+    opacity: 0;
+  }
+  to {
+    filter: blur(0);
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+@keyframes blurAnime {
+  from {
+    filter: blur(10px);
+    transform: scale(1.02);
+    opacity: 0;
+  }
+  to {
+    filter: blur(0);
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+.blurTrigger {
+  opacity: 0;
+}
+
 /* タブ切り替えアニメーション */
 @-webkit-keyframes displayAnime {
   from {
@@ -159,7 +198,7 @@ h2 {
 #loading {
   position: absolute;
   width: 100%;
-  height: 100vw;
+  height: 100%;
   transition: all 1s;
   background-color: rgb(255, 236, 196);
   position: fixed;
@@ -471,15 +510,29 @@ small {
   color: #a28d69;
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (min-width: 666px) and (max-width: 768px) {
+  .container {
+    width: 80%;
+  }
+  header #header-title {
+    height: 60px;
+    display: block;
+    padding-left: 10px;
+    width: 30%;
+    line-height: 18px;
+    left: 0;
+    margin: 24px 0 24px 24px;
+  }
   header .header-bar-inner {
     width: 100%;
+    display: block;
   }
   header nav {
+    border-bottom: 1px solid #cccccc;
     width: 100%;
-    top: 127px;
   }
   header nav #label-container label {
+    border-top: 1px solid #cccccc;
     margin: 0;
     position: relative;
     float: left;
@@ -490,6 +543,147 @@ small {
   header nav #label-container label a {
     width: 100%;
     padding: 10px 0;
+  }
+  #about .container .about-profile .slime {
+    left: 60%;
+    right: 0;
+  }
+  #skill .container {
+    width: 90%;
+  }
+  #skill .container .container-middle {
+    margin-right: 0;
+    padding: 0;
+  }
+  #skill .container .container-middle .slime {
+    background: #fffde7;
+    left: 0px;
+    padding: 75px;
+  }
+  #skill .container .skill-part {
+    width: 80%;
+  }
+  #skill .container .skill-part p {
+    padding: 32px 24px 0 14px;
+  }
+  #works .works-list {
+    flex-direction: column;
+  }
+  #works ul li {
+    width: 80%;
+  }
+  footer nav #label-container {
+    justify-content: center;
+    margin: 3%;
+  }
+  footer nav #label-container label {
+    gap: 24px;
+    font-size: 4vw;
+    font-weight: bold;
+    color: #a28d69;
+    letter-spacing: 0.2em;
+    position: relative;
+  }
+}
+@media screen and (min-width: 370px) and (max-width: 665px) {
+  .container {
+    width: 100%;
+  }
+  .mask h1 {
+    padding-left: 5vw;
+  }
+  header .header-bar-inner {
+    width: 100%;
+    display: block;
+  }
+  header .header-bar-inner h2 {
+    font-size: 18px;
+    line-height: 26px;
+  }
+  header .header-bar-inner #header-title {
+    display: block;
+    width: 100%;
+    height: 60px;
+    margin: 24px 0 24px 24px;
+    padding-left: 10px;
+    line-height: 18px;
+    left: 0;
+  }
+  header nav {
+    border-bottom: 1px solid #cccccc;
+    width: 100%;
+  }
+  header nav #label-container label {
+    border-top: 1px solid #cccccc;
+    margin: 0;
+    position: relative;
+    float: left;
+    width: 50%;
+    border-left: 1px solid rgb(157, 157, 157);
+    text-align: center;
+    font-size: 14px;
+    font-weight: lighter;
+  }
+  header nav #label-container label a {
+    width: 100%;
+    padding: 10px 0;
+  }
+  #about .slime {
+    margin: 48px 0 0 0;
+    left: 0;
+  }
+  #about .about-profile {
+    flex-direction: column;
+  }
+  #about .about-profile dl {
+    margin: 24px 0 0 0;
+  }
+  #about .about-profile dl dt {
+    width: 30%;
+  }
+  #about .about-profile dl dd {
+    width: 70%;
+  }
+  #about .about-profile .slime {
+    margin: 24px 0 0 0;
+    padding: 0;
+    right: 20px;
+  }
+  #skill .slime {
+    margin-top: -24px;
+    padding: 24px;
+  }
+  #skill #middle {
+    margin-top: 140px;
+    width: 100%;
+  }
+  #skill .skill-part {
+    width: 100%;
+  }
+  #skill .skill-part h2 {
+    font-size: 20px;
+  }
+  #works .works-list {
+    flex-direction: column;
+  }
+  #works ul {
+    gap: 0;
+  }
+  #works ul li {
+    width: 80%;
+  }
+  footer nav #label-container {
+    justify-content: center;
+    margin: 0 8px 0 8px;
+  }
+  footer nav #label-container label {
+    margin: 3%;
+    gap: 24px;
+    font-size: 4vw;
+    font-weight: bold;
+    color: #a28d69;
+    letter-spacing: 0.2em;
+    position: relative;
   }
 }
 /*# sourceMappingURL=style.css.map */
