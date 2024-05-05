@@ -73,7 +73,7 @@ a {
 }
 
 h2 {
-  font-size: 1.8vw;
+  font-size: 18px;
   font-weight: bold;
   border-left: solid 10px;
   letter-spacing: 0.2em;
@@ -514,7 +514,7 @@ small {
   color: #a28d69;
 }
 
-@media screen and (max-width: 1000px) {
+@media screen and (max-width: 666px) {
   .container {
     width: 80%;
   }
