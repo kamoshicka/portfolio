@@ -23,7 +23,6 @@ $(document).ready(function() {
       GethashID(href);
   });
 
-  // ページ読み込み時にハッシュを処理
   var hashName = location.hash;
   if (hashName && hashName.startsWith('#')) {
       GethashID(hashName);
@@ -31,8 +30,6 @@ $(document).ready(function() {
 
   // 外部リンクの処理
   $('a[href^="http://"], a[href^="https://"]').on("click", function(e) {
-      // ここで何もしない場合は、このハンドラは実際には不要です。
-      // 外部リンクのデフォルト動作を保証するためには、ここに何も記述しないか、明示的に return true; を記述します。
   });
 
   setupTabs();
@@ -64,10 +61,6 @@ function setupTabs() {
       });
   });
 }
-
-  // タブのセットアップ
-  // setupTabs();
-
 
 function setupTabs() {
   $('.tab a').each(function() {
@@ -107,7 +100,7 @@ let cursor = $(".cursor"),
       follower = $(".follower"),
       cWidth = 8, 
       fWidth = 40, 
-      delay = 8, 
+      delay = 1, 
       posX = 0, 
       posY = 0; 
 
@@ -173,13 +166,13 @@ $("a").on({
 
     // フォロワーのサイズを2倍に拡大
     gsap.to(follower, {
-      duration: .6,
+      duration: .3,
       scale: 2, 
       ease: "power1.inOut",
       onComplete: function() {
         // サイズ拡大アニメーション完了後に実行
         gsap.to(follower, {
-          duration: .6,
+          duration: .3,
           scale: 1,
           ease: "power1.inOut" 
         });
@@ -188,42 +181,42 @@ $("a").on({
   }
 });
 
-// 文字パラ
-function EachTextAnimeControl() {
-  $('.eachTextAnime').each(function() {
-    var elemPos = $(this).offset().top - 50;
-    var scroll = $(window).scrollTop();
-    var windowHeight = $(window).height();
-    if (scroll >= elemPos - windowHeight) {
-      $(this).addClass("appeartext");
-    } else {
-      $(this).removeClass("appeartext");
-    }
-  });
-}
+// 文字パラ (ボツ)
+// function EachTextAnimeControl() {
+//   $('.eachTextAnime').each(function() {
+//     var elemPos = $(this).offset().top - 50;
+//     var scroll = $(window).scrollTop();
+//     var windowHeight = $(window).height();
+//     if (scroll >= elemPos - windowHeight) {
+//       $(this).addClass("appeartext");
+//     } else {
+//       $(this).removeClass("appeartext");
+//     }
+//   });
+// }
 
-function initTextAnimation() {
-  $(".eachTextAnime").each(function() {
-    var element = $(this);
-    var html = element.html();
-    var lines = html.split('<br>');
-    var newHtml = lines.map(function(line) {
-      var spans = line.split('').map(function(char, index) {
-        var delay = index * 0.1; 
-        return '<span style="animation-delay:' + delay + 's;">' + char + '</span>';
-      }).join('');
-      return spans;
-    }).join('<br>');  
-    element.html(newHtml);
-  });
-}
+// function initTextAnimation() {
+//   $(".eachTextAnime").each(function() {
+//     var element = $(this);
+//     var html = element.html();
+//     var lines = html.split('<br>');
+//     var newHtml = lines.map(function(line) {
+//       var spans = line.split('').map(function(char, index) {
+//         var delay = index * 0.1; 
+//         return '<span style="animation-delay:' + delay + 's;">' + char + '</span>';
+//       }).join('');
+//       return spans;
+//     }).join('<br>');  
+//     element.html(newHtml);
+//   });
+// }
 
-$(window).scroll(EachTextAnimeControl);
+// $(window).scroll(EachTextAnimeControl);
 
-$(window).on('load', function() {
-  initTextAnimation();
-  EachTextAnimeControl();
-});
+// $(window).on('load', function() {
+//   initTextAnimation();
+//   EachTextAnimeControl();
+// });
 
 
 // skillsアニメーション

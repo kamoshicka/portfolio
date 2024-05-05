@@ -21,7 +21,7 @@ const keyframes = {
   ],
 };
 const options = {
-  duration: 4000,
+  duration: 3500,
   direction: 'alternate',
   iterations: Infinity,
 };

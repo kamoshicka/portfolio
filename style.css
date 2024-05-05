@@ -21,6 +21,7 @@ body {
 
 section {
   padding-bottom: 100px;
+  background-color: #fffcf6;
 }
 
 a {
@@ -88,14 +89,13 @@ h2 {
   display: block;
   -webkit-animation-name: displayAnime;
           animation-name: displayAnime;
-  -webkit-animation-duration: 3.5s;
-          animation-duration: 3.5s;
+  -webkit-animation-duration: 0.7s;
+          animation-duration: 0.7s;
   -webkit-animation-fill-mode: forwards;
           animation-fill-mode: forwards;
 }
 
 #vanta {
-  z-index: -1;
   width: 100%;
   height: 400px;
 }
@@ -142,8 +142,8 @@ h2 {
 .blur {
   -webkit-animation-name: blurAnime;
           animation-name: blurAnime;
-  -webkit-animation-duration: 2s;
-          animation-duration: 2s;
+  -webkit-animation-duration: 1.5s;
+          animation-duration: 1.5s;
   -webkit-animation-fill-mode: forwards;
           animation-fill-mode: forwards;
 }
@@ -199,7 +199,7 @@ h2 {
   position: absolute;
   width: 100%;
   height: 100%;
-  transition: all 1s;
+  transition: all 0.3s;
   background-color: rgb(255, 236, 196);
   position: fixed;
   top: 0;
@@ -347,7 +347,6 @@ header label:hover::before {
   width: 150px;
   height: 150px;
   left: auto;
-  right: 30%;
 }
 
 #skill {

@@ -22,6 +22,7 @@ body {
 
 section {
   padding-bottom: 100px;
+  background-color: #fffcf6;
 }
 
 a {
@@ -94,13 +95,12 @@ h2 {
 .is-active {
   display: block;
   animation-name: displayAnime;
-  animation-duration: 3.5s;
+  animation-duration: .7s;
   animation-fill-mode: forwards;
 
 }
 
 #vanta {
-  z-index: -1;
   width: 100%;
   height: 400px;
 }
@@ -138,7 +138,7 @@ h2 {
 /* skillsアニメーション */
 .blur {
   animation-name: blurAnime;
-  animation-duration: 2s;
+  animation-duration: 1.5s;
   animation-fill-mode: forwards;
 }
 
@@ -176,7 +176,7 @@ h2 {
   position: absolute;
   width: 100%;
   height: 100%;
-  transition: all 1s;
+  transition: all 0.3s;
   background-color: rgb(255, 236, 196);
   position: fixed;
   top: 0;
@@ -336,7 +336,6 @@ header {
       width: 150px;
       height: 150px;
       left: auto;
-      right: 30%;
     }
   }
 }
