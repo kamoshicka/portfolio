@@ -646,6 +646,7 @@ small {
   }
   #about .about-profile dl {
     margin: 24px 0 0 0;
+    border-bottom: 1px solid #d9d9d9;
   }
   #about .about-profile dl dt {
     width: 100%;
