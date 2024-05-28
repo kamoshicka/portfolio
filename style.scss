@@ -60,10 +60,12 @@ a {
 }
 
 .mask {
+  position: relative;
   width: 100vw;
   height: 72px;
   background-color: #3a3a3a;
   margin: 0 auto;
+  z-index: 4;
 
   h1 {
     padding-left: 20vw;
@@ -81,7 +83,6 @@ a {
 h2 {
   font-size: 18px;
   font-weight: bold;
-  border-left: solid 10px;
   letter-spacing: .2em;
 }
 
@@ -218,6 +219,12 @@ h2 {
 header {
   position: relative;
   background-color: #fffcf6;
+  .header-bar {
+    position: fixed;
+    z-index:4;
+    width: 100%;
+    opacity: .9;
+  }
 
   .header-bar-inner {
     display: flex;
@@ -297,8 +304,55 @@ header {
 .is-show {
   top: 0;
 }
+#net {
+  z-index: 3;
+  width: 100%;
+  height: 100%;
+}
 
 #about {
+  .scroll-down {
+    position: absolute;
+    left: 50px;
+    bottom: 10px;
+    height: 50px;
+    span {
+      position: absolute;
+      left: -15px;
+      top: -30px;
+      color: #3E4550;
+      font-size: 12px;
+      letter-spacing: 0.05em;
+      writing-mode: vertical-lr;
+    }
+    span::after {
+      content: "";
+      position: absolute;
+      padding-top: 4rem;
+      width: 1px;
+      height: 30px;
+      background: #3E4550;
+      animation: pathmove 1.5s ease-in-out infinite;
+      opacity: 0;
+    }
+  }
+  @keyframes pathmove {
+    0% {
+      height: 0;
+      top: 0;
+      opacity: 0;
+  }
+  
+  30% {
+      height: 30px;
+      opacity: 1;
+  }
+  100% {
+      height: 0;
+      top: 50px;
+      opacity: 0;
+  }
+  }
 
 
   .about-text {
@@ -341,89 +395,54 @@ header {
 }
 
 #skill {
-  background-image: url(images/tree_bark.png);
-
-  p {
-    padding: 32px 24px 24px;
-
-  }
-
-  h2 {
-    margin-bottom: 36px;
-    border: none;
-  }
-
-  img {
-    margin-right: 18px;
-    float: left;
-  }
-
-  .skill-part {
-    background-color: #fff;
-    border-radius: 4px;
-    padding: 30px 8px 30px 8px;
-    width: 60%;
-    background-image:
-      linear-gradient(to right, #000, #000 3px, transparent 3px, transparent 8px),
-      linear-gradient(to bottom, #000, #000 3px, transparent 3px, transparent 8px),
-      linear-gradient(to left, #000, #000 3px, transparent 3px, transparent 8px),
-      linear-gradient(to top, #000, #000 3px, transparent 3px, transparent 8px);
-    background-size:
-      8px 2px,
-      2px 8px,
-      8px 2px,
-      2px 8px;
-    background-position:
-      left top,
-      right top,
-      right bottom,
-      left bottom;
-    background-repeat:
-      repeat-x,
-      repeat-y,
-      repeat-x,
-      repeat-y;
-
+  height: 800px;
+  padding-bottom: 0 !important;
+  .skill-items {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    gap: 10%;
+  
+  .skill-block {
+    width: 40%;
+    padding-top: 3rem;
+    display: flex;
     img {
-      padding-bottom: 32px;
+      width:10%;
+      height: 100%;
     }
-
-    strong {
-      font-size: 18px;
-      font-weight: bold;
-      border-bottom: solid;
+    .skill-text {
+      display: flex;
+      flex-direction: column;
+      h2 {
+        font-weight: bold;
+        font-size: 1.5rem;
+      }
+      h2::before {
+          content: "";
+          position: absolute;
+          padding-top: 4rem;
+          width: 1px;
+          height: 30px;
+          background: #3E4550;
+          animation: pathmove 1.5s ease-in-out infinite;
+          opacity: 0;
+        
+      }
+      p {
+        margin-top: 1rem;
+        font-weight: lighter;
+      }
     }
   }
-}
-
-.container-middle {
-  width: 60%;
-  margin-right: -20%;
-  align-self: flex-end;
-
-  .skill-part {
-    width: 100% !important;
+  }
   }
 
-  .slime {
-    background: #fffde7;
-  }
-}
-
-#middle {
-  width: 100%;
-  align-self: flex-end;
-}
-
-.skill-main {
-  display: flex;
-  flex-direction: column;
-  margin-top: 100px;
-  gap: 36px;
-}
 
 
 #works {
+  z-index: 3;
   .container {
     width: 95%;
   }
@@ -454,6 +473,13 @@ header {
         position: absolute;
         top: -5px;
         left: 20px;
+      }
+      a{
+        img {
+          border-radius: 10px;
+          transition-duration: .3s;
+          height: 90%;
+        }
       }
     }
 
@@ -635,6 +661,7 @@ small {
     ul {
       li {
         width: 80%;
+        
       }
     }
   }
@@ -776,12 +803,6 @@ small {
   #works {
     .works-list {
       flex-direction: column;
-    }
-    ul {
-      gap: 0;
-      li {
-        width: 80%;
-      }
     }
   }
 

@@ -47,6 +47,9 @@
     <div class="mask">
     <h1>ABOUT</h1>
     </div>
+    <div class="scroll-down">
+      <span>Scroll</span>
+    </div>
     <div class="slime blurTrigger"></div>
     <div class="container">
       
@@ -78,45 +81,98 @@
     </div>
   </section>
 
-  <section id="skill" class="area pattern-horizontal-lines-xl">
+  
+  <section id="skill">
+    <div id="net">
     <div class="mask">
     <h1>Skill</h1>
   </div>
-    <div class="skill-main container">
-      <div class="skill-part blurTrigger">
-        <h2><img src="images/skill1.png" width="72">HTML<br>CSS<br>SCSS</h2>
-        <p>デザインやコーディングにおいて<br>
-          「誰が見ても分かりやすい」を意識しています。<br>
-          モダンCSSの技術キャッチアップ等も欠かさず行うことで、
-          より柔軟なWEBサイト作成に努めております。</p>
-          
-      </div>
-      <div class="container-middle">
-        <div class="slime blurTrigger"><img src="images/17549_color.png" width="150"></div>
-      <div class="skill-part blurTrigger" id="middle">
-        <h2><img src="images/skill2.png" width="72">Javascript<br>jQuery</h2>
-        <p>WEBサイトに自由な動きをつける技術を用いることができます。<br>
-          クライアントの様々な要望に応えられるよう、
-          日々の学習は欠かしません。</p>
+  <div class="skill-items">
+
+  <div class="skill-block">
+    <img src="images/React-icon.svg">
+    <div class="skill-text blurTrigger">
+      <h2>React</h2>
+      <p>大規模な開発に携わるため学習中です。<br>
+      現在最も注力しています。</p>
+    </div>
+  </div>
+  <div class="skill-block">
+    <img src="images/Typescript_logo_2020.svg">
+    <div class="skill-text blurTrigger">
+      <h2>Typescript</h2>
+      <p>Reactと並行して学習中ですが、調べながら実装できます。</p>
+    </div>
+  </div>
+    <div class="skill-block">
+      <img src="images/html5-brands.svg">
+      <div class="skill-text blurTrigger">
+        <h2>HTML5</h2>
+        <p>BEMを駆使して見やすいコードを意識しています。</p>
       </div>
     </div>
-      <div class="skill-part blurTrigger">
-        <h2><img src="images/skill3.png" width="72">React<br>Typescript</h2>
-        <p>チームとして大規模なWEB制作にも携われるよう学習しております。<br>
-          現状のスキルレベルは、
-          <strong><a href="#works">Works</a></strong>のニュースサイトとNetflixのクローンサイトをご覧ください。
-        </p>
+    <div class="skill-block">
+      <img src="images/css3-brands.svg">
+      <div class="skill-text blurTrigger">
+        <h2>CSS3</h2>
+        <p>SASS記法を好みますが、SCSSやCSSにも対応します。</p>
       </div>
-      
     </div>
+    <div class="skill-block">
+      <img src="images/js-brands.svg">
+      <div class="skill-text blurTrigger">
+        <h2>Javascript,jQuery</h2>
+        <p>基本的なことは一通り分かります。</p>
+      </div>
+    </div>
+
+    <div class="skill-block">
+      <img src="images/docker-brands.svg">
+      <div class="skill-text blurTrigger">
+        <h2>Docker</h2>
+        <p>練習で環境構築に使用し、簡単な操作はできます。</p>
+      </div>
+    </div>
+    <div class="skill-block">
+      <img src="images/github-brands.svg">
+      <div class="skill-text blurTrigger">
+        <h2>Git</h2>
+        <p>独学を始めてから全てのプロジェクトで使用しています。</p>
+      </div>
+    </div>
+    <div class="skill-block">
+      <img src="images/windows-brands.svg">
+      <img src="images/apple.svg">
+      <div class="skill-text blurTrigger">
+        <h2>使用デバイス</h2>
+        <p>Windows,MacBook,iPad,iPhoneを使用しており、開発及びテスト環境は整っています。</p>
+      </div>
+    </div>
+    
   </section>
 
-  <section id="works" class="area">
+  <section id="works" class="">
     <div class="mask">
     <h1>Works</h1>
     </div>
     <div class="container">
     <ul class="works-list">
+      <li class="works-list-item blurTrigger">
+        <div class="box-title">岐阜商工信用組合様採用ページ模写</div>
+        <a href="https://kamoshicka.github.io/mosha/">
+          <img src="images/image-works5.png" width="100%" height="auto">
+          <div class="works-mask">
+            <div class="mask-caption">HTML<br>SCSS<br>javascript<br>jQuery</div>
+          </div>
+      </li>
+      <li class="works-list-item blurTrigger">
+        <div class="box-title">架空ファッションサイト</div>
+        <a href="https://kamoshicka.github.io/practice/#">
+          <img src="images/image-works6.png" width="100%" height="auto">
+          <div class="works-mask">
+            <div class="mask-caption">HTML<br>CSS<br>javascript</div>
+          </div>
+      </li>
       <li class="works-list-item blurTrigger">
         <div class="box-title">Netflixのクローンアプリ</div>
         <a href="https://netflix-react-practice-e0d7c.web.app/">
@@ -178,6 +234,7 @@
   <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
   <script src="three.min.js"></script>
   <script src="vanta.clouds.min.js"></script>
+  <script src="vanta.net.min.js"></script>
   <script src="jquery-3.7.1.min.js"></script>
   <script src="query.js"></script>
   <script src="script.js"></script>
@@ -198,6 +255,22 @@
       sunlightColor: 0xe8c8bb,
       speed: 0.40
     })
+VANTA.NET({
+  el: "#net",
+  mouseControls: false,
+  touchControls: false,
+  gyroControls: true,
+  minHeight: 200.00,
+  minWidth: 200.00,
+  scale: 1.00,
+  scaleMobile: 1.00,
+  color: 0xafafaf, 
+  backgroundColor: 0xdedede,
+  points: 8.00,
+  maxDistance: 21.00,
+  spacing: 18.00
+})
+    
     </script>
 
 

@@ -3,91 +3,91 @@
 // タブ
 // タブ
 // タブ
-function GethashID(hashIDName) {
-  if (hashIDName && hashIDName.startsWith('#')) {
-    // 対象となるタブとエリアをアクティブにする
-    var targetTab = $('#label-container label').find('a[href="' + hashIDName + '"]').parent();
-    $('#label-container label').removeClass("active");
-    $(targetTab).addClass("active");
+// function GethashID(hashIDName) {
+//   if (hashIDName && hashIDName.startsWith('#')) {
+//     // 対象となるタブとエリアをアクティブにする
+//     var targetTab = $('#label-container label').find('a[href="' + hashIDName + '"]').parent();
+//     $('#label-container label').removeClass("active");
+//     $(targetTab).addClass("active");
 
-    $(".area").removeClass("is-active");
-    $(hashIDName).addClass("is-active");
-  }
-}
+//     $(".area").removeClass("is-active");
+//     $(hashIDName).addClass("is-active");
+//   }
+// }
 
-$(document).ready(function() {
-  // 内部ナビゲーションリンクの処理
-  $('a[href^="#"]').on("click", function(e) {
-      e.preventDefault();
-      var href = $(this).attr('href');
-      GethashID(href);
-  });
+// $(document).ready(function() {
+//   // 内部ナビゲーションリンクの処理
+//   $('a[href^="#"]').on("click", function(e) {
+//       e.preventDefault();
+//       var href = $(this).attr('href');
+//       GethashID(href);
+//   });
 
-  var hashName = location.hash;
-  if (hashName && hashName.startsWith('#')) {
-      GethashID(hashName);
-  }
+//   var hashName = location.hash;
+//   if (hashName && hashName.startsWith('#')) {
+//       GethashID(hashName);
+//   }
 
-  // 外部リンクの処理
-  $('a[href^="http://"], a[href^="https://"]').on("click", function(e) {
-  });
+//   // 外部リンクの処理
+//   $('a[href^="http://"], a[href^="https://"]').on("click", function(e) {
+//   });
 
-  setupTabs();
-});
+//   setupTabs();
+// });
 
-function GethashID(hashIDName) {
-  if (hashIDName && hashIDName.startsWith('#')) {
-      var targetTab = $('#label-container label').find('a[href="' + hashIDName + '"]').parent();
-      $('#label-container label').removeClass("active");
-      $(targetTab).addClass("active");
+// function GethashID(hashIDName) {
+//   if (hashIDName && hashIDName.startsWith('#')) {
+//       var targetTab = $('#label-container label').find('a[href="' + hashIDName + '"]').parent();
+//       $('#label-container label').removeClass("active");
+//       $(targetTab).addClass("active");
 
-      $(".area").removeClass("is-active");
-      $(hashIDName).addClass("is-active");
-  }
-}
+//       $(".area").removeClass("is-active");
+//       $(hashIDName).addClass("is-active");
+//   }
+// }
 
-function setupTabs() {
-  $('.tab a').each(function() {
-      $(this).on('click', function(e) {
-          e.preventDefault();
-          var idName = $(this).attr('href');
-          if (idName.startsWith('#')) {
-              GethashID(idName);
-              $('.area').removeClass('is-active');
-              $(idName).addClass('is-active');
-              $('.tab').removeClass('active');
-              $(this).parent().addClass('active');
-          }
-      });
-  });
-}
+// function setupTabs() {
+//   $('.tab a').each(function() {
+//       $(this).on('click', function(e) {
+//           e.preventDefault();
+//           var idName = $(this).attr('href');
+//           if (idName.startsWith('#')) {
+//               GethashID(idName);
+//               $('.area').removeClass('is-active');
+//               $(idName).addClass('is-active');
+//               $('.tab').removeClass('active');
+//               $(this).parent().addClass('active');
+//           }
+//       });
+//   });
+// }
 
-function setupTabs() {
-  $('.tab a').each(function() {
-    $(this).on('click', function(e) {
-      e.preventDefault();
-      var idName = $(this).attr('href');
-      if (idName.startsWith('#')) {
-        GethashID(idName);
-        $('.area').removeClass('is-active');
-        $(idName).addClass('is-active');
-        $('.tab').removeClass('active');
-        $(this).parent().addClass('active');
-      }
-    });
-  });
+// function setupTabs() {
+//   $('.tab a').each(function() {
+//     $(this).on('click', function(e) {
+//       e.preventDefault();
+//       var idName = $(this).attr('href');
+//       if (idName.startsWith('#')) {
+//         GethashID(idName);
+//         $('.area').removeClass('is-active');
+//         $(idName).addClass('is-active');
+//         $('.tab').removeClass('active');
+//         $(this).parent().addClass('active');
+//       }
+//     });
+//   });
 
 
-  activateTab('#skill');
-  $('#label-container label:first-of-type').addClass("active");
-  $('.area:first-of-type').addClass("is-active");
-  var hashName = location.hash;
-  GethashID(hashName);
-}
+//   activateTab('#skill');
+//   $('#label-container label:first-of-type').addClass("active");
+//   $('.area:first-of-type').addClass("is-active");
+//   var hashName = location.hash;
+//   GethashID(hashName);
+// }
 
-$(document).ready(function() {
-  setupTabs();
-});
+// $(document).ready(function() {
+//   setupTabs();
+// });
 
 
 

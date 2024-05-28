@@ -58,10 +58,12 @@ a {
 }
 
 .mask {
+  position: relative;
   width: 100vw;
   height: 72px;
   background-color: #3a3a3a;
   margin: 0 auto;
+  z-index: 4;
 }
 .mask h1 {
   padding-left: 20vw;
@@ -76,7 +78,6 @@ a {
 h2 {
   font-size: 18px;
   font-weight: bold;
-  border-left: solid 10px;
   letter-spacing: 0.2em;
 }
 
@@ -250,6 +251,12 @@ header {
   position: relative;
   background-color: #fffcf6;
 }
+header .header-bar {
+  position: fixed;
+  z-index: 4;
+  width: 100%;
+  opacity: 0.9;
+}
 header .header-bar-inner {
   display: flex;
   gap: 15vw;
@@ -317,6 +324,70 @@ header label:hover::before {
   top: 0;
 }
 
+#net {
+  z-index: 3;
+  width: 100%;
+  height: 100%;
+}
+
+#about .scroll-down {
+  position: absolute;
+  left: 50px;
+  bottom: 10px;
+  height: 50px;
+}
+#about .scroll-down span {
+  position: absolute;
+  left: -15px;
+  top: -30px;
+  color: #3E4550;
+  font-size: 12px;
+  letter-spacing: 0.05em;
+  writing-mode: vertical-lr;
+}
+#about .scroll-down span::after {
+  content: "";
+  position: absolute;
+  padding-top: 4rem;
+  width: 1px;
+  height: 30px;
+  background: #3E4550;
+  -webkit-animation: pathmove 1.5s ease-in-out infinite;
+          animation: pathmove 1.5s ease-in-out infinite;
+  opacity: 0;
+}
+@-webkit-keyframes pathmove {
+  0% {
+    height: 0;
+    top: 0;
+    opacity: 0;
+  }
+  30% {
+    height: 30px;
+    opacity: 1;
+  }
+  100% {
+    height: 0;
+    top: 50px;
+    opacity: 0;
+  }
+}
+@keyframes pathmove {
+  0% {
+    height: 0;
+    top: 0;
+    opacity: 0;
+  }
+  30% {
+    height: 30px;
+    opacity: 1;
+  }
+  100% {
+    height: 0;
+    top: 50px;
+    opacity: 0;
+  }
+}
 #about .about-text {
   margin-top: 72px;
   line-height: 2rem;
@@ -350,62 +421,52 @@ header label:hover::before {
 }
 
 #skill {
-  background-image: url(images/tree_bark.png);
+  height: 800px;
+  padding-bottom: 0 !important;
 }
-#skill p {
-  padding: 32px 24px 24px;
+#skill .skill-items {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 10%;
 }
-#skill h2 {
-  margin-bottom: 36px;
-  border: none;
+#skill .skill-items .skill-block {
+  width: 40%;
+  padding-top: 3rem;
+  display: flex;
 }
-#skill img {
-  margin-right: 18px;
-  float: left;
+#skill .skill-items .skill-block img {
+  width: 10%;
+  height: 100%;
 }
-#skill .skill-part {
-  background-color: #fff;
-  border-radius: 4px;
-  padding: 30px 8px 30px 8px;
-  width: 60%;
-  background-image: linear-gradient(to right, #000, #000 3px, transparent 3px, transparent 8px), linear-gradient(to bottom, #000, #000 3px, transparent 3px, transparent 8px), linear-gradient(to left, #000, #000 3px, transparent 3px, transparent 8px), linear-gradient(to top, #000, #000 3px, transparent 3px, transparent 8px);
-  background-size: 8px 2px, 2px 8px, 8px 2px, 2px 8px;
-  background-position: left top, right top, right bottom, left bottom;
-  background-repeat: repeat-x, repeat-y, repeat-x, repeat-y;
-}
-#skill .skill-part img {
-  padding-bottom: 32px;
-}
-#skill .skill-part strong {
-  font-size: 18px;
-  font-weight: bold;
-  border-bottom: solid;
-}
-
-.container-middle {
-  width: 60%;
-  margin-right: -20%;
-  align-self: flex-end;
-}
-.container-middle .skill-part {
-  width: 100% !important;
-}
-.container-middle .slime {
-  background: #fffde7;
-}
-
-#middle {
-  width: 100%;
-  align-self: flex-end;
-}
-
-.skill-main {
+#skill .skill-items .skill-block .skill-text {
   display: flex;
   flex-direction: column;
-  margin-top: 100px;
-  gap: 36px;
+}
+#skill .skill-items .skill-block .skill-text h2 {
+  font-weight: bold;
+  font-size: 1.5rem;
+}
+#skill .skill-items .skill-block .skill-text h2::before {
+  content: "";
+  position: absolute;
+  padding-top: 4rem;
+  width: 1px;
+  height: 30px;
+  background: #3E4550;
+  -webkit-animation: pathmove 1.5s ease-in-out infinite;
+          animation: pathmove 1.5s ease-in-out infinite;
+  opacity: 0;
+}
+#skill .skill-items .skill-block .skill-text p {
+  margin-top: 1rem;
+  font-weight: lighter;
 }
 
+#works {
+  z-index: 3;
+}
 #works .container {
   width: 95%;
 }
@@ -436,6 +497,11 @@ header label:hover::before {
   position: absolute;
   top: -5px;
   left: 20px;
+}
+#works ul li a img {
+  border-radius: 10px;
+  transition-duration: 0.3s;
+  height: 90%;
 }
 #works ul .works-mask {
   width: 100%;
@@ -685,12 +751,6 @@ small {
   }
   #works .works-list {
     flex-direction: column;
-  }
-  #works ul {
-    gap: 0;
-  }
-  #works ul li {
-    width: 80%;
   }
   footer nav #label-container {
     justify-content: center;
