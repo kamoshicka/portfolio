@@ -277,7 +277,7 @@ header nav {
   display: inline-block;
   right: 0;
   top: 0;
-  line-height: 35px;
+  line-height: 70px;
 }
 header h2 {
   position: relative;
@@ -617,6 +617,7 @@ small {
   header nav {
     border-bottom: 1px solid #cccccc;
     width: 100%;
+    line-height: 35px !important;
   }
   header nav #label-container label {
     border-top: 1px solid #cccccc;
@@ -714,6 +715,7 @@ small {
   header nav {
     border-bottom: 1px solid #cccccc;
     width: 100%;
+    line-height: 35px !important;
   }
   header nav #label-container label {
     border-top: 1px solid #cccccc;
