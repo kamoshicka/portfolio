@@ -59,7 +59,7 @@ a {
 
 .mask {
   position: relative;
-  width: 100vw;
+  width: 100%;
   height: 72px;
   background-color: #3a3a3a;
   margin: 0 auto;
@@ -253,7 +253,7 @@ header {
 }
 header .header-bar {
   position: fixed;
-  z-index: 4;
+  z-index: 5;
   width: 100%;
   opacity: 0.9;
 }
@@ -261,7 +261,6 @@ header .header-bar-inner {
   display: flex;
   gap: 15vw;
   background-color: #fffcf6;
-  border-radius: 6px;
   z-index: 999;
   width: 100%;
   margin: 0 auto;
@@ -278,7 +277,7 @@ header nav {
   display: inline-block;
   right: 0;
   top: 0;
-  line-height: 75px;
+  line-height: 35px;
 }
 header h2 {
   position: relative;
@@ -325,6 +324,7 @@ header label:hover::before {
 }
 
 #net {
+  margin: 0 auto;
   z-index: 3;
   width: 100%;
   height: 100%;
@@ -440,9 +440,18 @@ header label:hover::before {
   width: 10%;
   height: 100%;
 }
+#skill .skill-items .skill-block .skill-block-imgs {
+  display: flex;
+  flex-direction: column;
+  width: 18%;
+}
+#skill .skill-items .skill-block .skill-block-imgs img {
+  width: 100%;
+}
 #skill .skill-items .skill-block .skill-text {
   display: flex;
   flex-direction: column;
+  margin-left: 1rem;
 }
 #skill .skill-items .skill-block .skill-text h2 {
   font-weight: bold;
@@ -465,6 +474,7 @@ header label:hover::before {
 }
 
 #works {
+  position: relative;
   z-index: 3;
 }
 #works .container {
@@ -530,6 +540,8 @@ header label:hover::before {
 }
 
 footer {
+  position: relative;
+  z-index: 3;
   background-color: #3a3a3a;
   width: 100%;
   margin: 0 auto 60px auto;
@@ -583,6 +595,12 @@ small {
   .container {
     width: 80%;
   }
+  .scroll-down {
+    position: absolute;
+    left: 20px;
+    bottom: 80px;
+    height: 50px;
+  }
   header #header-title {
     height: 60px;
     display: block;
@@ -590,7 +608,7 @@ small {
     width: 30%;
     line-height: 18px;
     left: 0;
-    margin: 24px 0 24px 24px;
+    margin: 0 0 24px 24px;
   }
   header .header-bar-inner {
     width: 100%;
@@ -636,11 +654,19 @@ small {
   #skill .container .skill-part p {
     padding: 32px 24px 0 14px;
   }
+  #works {
+    position: relative;
+    z-index: 3;
+  }
   #works .works-list {
     flex-direction: column;
   }
   #works ul li {
     width: 80%;
+  }
+  footer {
+    position: relative;
+    z-index: 3;
   }
   footer nav #label-container {
     justify-content: center;
@@ -662,6 +688,12 @@ small {
   .mask h1 {
     padding-left: 5vw;
   }
+  .scroll-down {
+    position: absolute;
+    left: 20px !important;
+    bottom: 80px !important;
+    height: 50px !important;
+  }
   header .header-bar-inner {
     width: 100%;
     display: block;
@@ -674,7 +706,7 @@ small {
     display: block;
     width: 100%;
     height: 60px;
-    margin: 24px 0 24px 24px;
+    margin: 0 0 24px 24px;
     padding-left: 10px;
     line-height: 18px;
     left: 0;
@@ -735,22 +767,36 @@ small {
     padding: 0;
     right: 20px;
   }
-  #skill .slime {
-    margin-top: -24px;
-    padding: 24px;
+  #skill {
+    height: auto !important;
   }
-  #skill #middle {
-    margin-top: 140px;
+  #skill .skill-items {
+    flex-direction: column;
   }
-  #skill .skill-part {
+  #skill .skill-items .skill-block {
     width: 90%;
-    margin: 0 auto;
   }
-  #skill .skill-part h2 {
-    font-size: 20px;
+  #skill .skill-items .skill-block img {
+    width: 15% !important;
+  }
+  #skill .skill-items .skill-block-imgs {
+    width: 33% !important;
+    padding-bottom: 4rem !important;
+  }
+  #skill .skill-items .skill-block-imgs img {
+    width: 100% !important;
+  }
+  #works {
+    position: relative;
+    z-index: 3;
   }
   #works .works-list {
     flex-direction: column;
+    z-index: 2;
+  }
+  footer {
+    position: relative;
+    z-index: 3;
   }
   footer nav #label-container {
     justify-content: center;

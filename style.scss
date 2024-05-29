@@ -61,7 +61,7 @@ a {
 
 .mask {
   position: relative;
-  width: 100vw;
+  width: 100%;
   height: 72px;
   background-color: #3a3a3a;
   margin: 0 auto;
@@ -221,7 +221,7 @@ header {
   background-color: #fffcf6;
   .header-bar {
     position: fixed;
-    z-index:4;
+    z-index:5;
     width: 100%;
     opacity: .9;
   }
@@ -230,7 +230,6 @@ header {
     display: flex;
     gap: 15vw;
     background-color: #fffcf6;
-    border-radius: 6px;
     z-index: 999;
     width: 100%;
     margin: 0 auto;
@@ -250,7 +249,7 @@ header {
     display: inline-block;
     right: 0;
     top: 0;
-    line-height: 75px;
+    line-height: 35px;
   }
 
   h2 {
@@ -304,7 +303,9 @@ header {
 .is-show {
   top: 0;
 }
+
 #net {
+  margin: 0 auto;
   z-index: 3;
   width: 100%;
   height: 100%;
@@ -412,12 +413,23 @@ header {
       width:10%;
       height: 100%;
     }
+
+    .skill-block-imgs {
+      display: flex;
+      flex-direction: column;
+      width:18%;
+      img {
+        width: 100%;
+      }
+    }
     .skill-text {
       display: flex;
       flex-direction: column;
+      margin-left: 1rem;
       h2 {
         font-weight: bold;
         font-size: 1.5rem;
+       
       }
       h2::before {
           content: "";
@@ -442,6 +454,7 @@ header {
 
 
 #works {
+  position: relative;
   z-index: 3;
   .container {
     width: 95%;
@@ -519,6 +532,8 @@ header {
 
 
 footer {
+  position: relative;
+  z-index: 3;
   background-color: #3a3a3a;
   width: 100%;
   margin: 0 auto 60px auto;
@@ -582,6 +597,12 @@ small {
   .container {
     width: 80%;
   }
+  .scroll-down {
+    position: absolute;
+    left: 20px;
+    bottom: 80px;
+    height: 50px;
+  }
   header {
     #header-title {
       height: 60px;
@@ -590,7 +611,7 @@ small {
       width: 30%;
       line-height: 18px;
       left: 0;
-      margin: 24px 0 24px 24px;
+      margin: 0 0 24px 24px;
     }
 
     .header-bar-inner {
@@ -655,6 +676,8 @@ small {
   }
 
   #works {
+    position: relative;
+    z-index: 3;
     .works-list {
       flex-direction: column;
     }
@@ -667,6 +690,8 @@ small {
   }
 
   footer {
+    position: relative;
+    z-index: 3;
     nav{
       #label-container {
         justify-content: center;
@@ -698,6 +723,12 @@ small {
       padding-left: 5vw;
     }
   }
+  .scroll-down {
+    position: absolute;
+    left: 20px !important;
+    bottom: 80px !important;
+    height: 50px !important;
+  }
   header {
 
 
@@ -712,7 +743,7 @@ small {
         display: block;
         width: 100%;
         height: 60px;
-        margin: 24px 0 24px 24px;
+        margin: 0 0 24px 24px;
         padding-left: 10px;
         line-height: 18px;
         left: 0;
@@ -784,29 +815,37 @@ small {
     }
   }
   #skill {
-    .slime {
-      margin-top: -24px;
-        padding: 24px;
-    }
-    #middle {
-      margin-top: 140px;
-    }
-    .skill-part {
-      width: 90%;
-      margin: 0 auto;
-      h2 {
-        font-size: 20px;
+    height: auto !important;
+    .skill-items {
+      flex-direction: column;
+      .skill-block {
+        width: 90%;
+        img {
+          width: 15% !important;
+        }
+      }
+      .skill-block-imgs {
+        width: 33% !important;
+        padding-bottom: 4rem !important;
+        img {
+          width: 100% !important;
+        }
       }
     }
   }
 
   #works {
+    position: relative;
+    z-index: 3;
     .works-list {
       flex-direction: column;
+      z-index: 2;
     }
   }
 
   footer {
+    position: relative;
+    z-index: 3;
     nav{
       #label-container {
         justify-content: center;
