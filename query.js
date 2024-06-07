@@ -1,94 +1,5 @@
 'use strict';
 
-// タブ
-// タブ
-// タブ
-// function GethashID(hashIDName) {
-//   if (hashIDName && hashIDName.startsWith('#')) {
-//     // 対象となるタブとエリアをアクティブにする
-//     var targetTab = $('#label-container label').find('a[href="' + hashIDName + '"]').parent();
-//     $('#label-container label').removeClass("active");
-//     $(targetTab).addClass("active");
-
-//     $(".area").removeClass("is-active");
-//     $(hashIDName).addClass("is-active");
-//   }
-// }
-
-// $(document).ready(function() {
-//   // 内部ナビゲーションリンクの処理
-//   $('a[href^="#"]').on("click", function(e) {
-//       e.preventDefault();
-//       var href = $(this).attr('href');
-//       GethashID(href);
-//   });
-
-//   var hashName = location.hash;
-//   if (hashName && hashName.startsWith('#')) {
-//       GethashID(hashName);
-//   }
-
-//   // 外部リンクの処理
-//   $('a[href^="http://"], a[href^="https://"]').on("click", function(e) {
-//   });
-
-//   setupTabs();
-// });
-
-// function GethashID(hashIDName) {
-//   if (hashIDName && hashIDName.startsWith('#')) {
-//       var targetTab = $('#label-container label').find('a[href="' + hashIDName + '"]').parent();
-//       $('#label-container label').removeClass("active");
-//       $(targetTab).addClass("active");
-
-//       $(".area").removeClass("is-active");
-//       $(hashIDName).addClass("is-active");
-//   }
-// }
-
-// function setupTabs() {
-//   $('.tab a').each(function() {
-//       $(this).on('click', function(e) {
-//           e.preventDefault();
-//           var idName = $(this).attr('href');
-//           if (idName.startsWith('#')) {
-//               GethashID(idName);
-//               $('.area').removeClass('is-active');
-//               $(idName).addClass('is-active');
-//               $('.tab').removeClass('active');
-//               $(this).parent().addClass('active');
-//           }
-//       });
-//   });
-// }
-
-// function setupTabs() {
-//   $('.tab a').each(function() {
-//     $(this).on('click', function(e) {
-//       e.preventDefault();
-//       var idName = $(this).attr('href');
-//       if (idName.startsWith('#')) {
-//         GethashID(idName);
-//         $('.area').removeClass('is-active');
-//         $(idName).addClass('is-active');
-//         $('.tab').removeClass('active');
-//         $(this).parent().addClass('active');
-//       }
-//     });
-//   });
-
-
-//   activateTab('#skill');
-//   $('#label-container label:first-of-type').addClass("active");
-//   $('.area:first-of-type').addClass("is-active");
-//   var hashName = location.hash;
-//   GethashID(hashName);
-// }
-
-// $(document).ready(function() {
-//   setupTabs();
-// });
-
 
 
 // カーソル
@@ -181,43 +92,6 @@ $("a").on({
   }
 });
 
-// 文字パラ (ボツ)
-// function EachTextAnimeControl() {
-//   $('.eachTextAnime').each(function() {
-//     var elemPos = $(this).offset().top - 50;
-//     var scroll = $(window).scrollTop();
-//     var windowHeight = $(window).height();
-//     if (scroll >= elemPos - windowHeight) {
-//       $(this).addClass("appeartext");
-//     } else {
-//       $(this).removeClass("appeartext");
-//     }
-//   });
-// }
-
-// function initTextAnimation() {
-//   $(".eachTextAnime").each(function() {
-//     var element = $(this);
-//     var html = element.html();
-//     var lines = html.split('<br>');
-//     var newHtml = lines.map(function(line) {
-//       var spans = line.split('').map(function(char, index) {
-//         var delay = index * 0.1; 
-//         return '<span style="animation-delay:' + delay + 's;">' + char + '</span>';
-//       }).join('');
-//       return spans;
-//     }).join('<br>');  
-//     element.html(newHtml);
-//   });
-// }
-
-// $(window).scroll(EachTextAnimeControl);
-
-// $(window).on('load', function() {
-//   initTextAnimation();
-//   EachTextAnimeControl();
-// });
-
 
 // skillsアニメーション
 $(window).on('scroll resize', function() {
@@ -232,3 +106,4 @@ $(window).on('scroll resize', function() {
     }
   });
 });
+

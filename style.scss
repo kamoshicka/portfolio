@@ -461,10 +461,47 @@ header {
     width: 95%;
   }
   ul {
+    position: relative;
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
     gap: 48px;
+    margin-top: 16vh;
+
+    .works-index {
+      position: absolute;
+      width: fit-content;
+      margin-bottom: 50px;
+      top: -8vh;
+      &.overflow-hidden {
+        overflow: hidden;
+      }
+    }
+    h3 {
+      span {
+        will-change: transform;
+        font-weight: bold;
+        font-size: 30px;
+        display: inline-block;
+      }
+    }
+    .line {
+      width: 100%;
+      display: block;
+      border: 0.5px solid #0c1c24;
+    
+      @keyframes expandRight {
+        from {
+          width: 100%;
+        }
+        to {
+          width: 95vw;
+        }
+      }
+    }
+    .animate {
+      animation: expandRight 3s forwards;
+    }
 
     li {
       width: 40vw;

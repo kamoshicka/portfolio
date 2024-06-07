@@ -482,10 +482,54 @@ header label:hover::before {
   width: 95%;
 }
 #works ul {
+  position: relative;
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
   gap: 48px;
+  margin-top: 16vh;
+}
+#works ul .works-index {
+  position: absolute;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  margin-bottom: 50px;
+  top: -8vh;
+}
+#works ul .works-index.overflow-hidden {
+  overflow: hidden;
+}
+#works ul h3 span {
+  will-change: transform;
+  font-weight: bold;
+  font-size: 30px;
+  display: inline-block;
+}
+#works ul .line {
+  width: 100%;
+  display: block;
+  border: 0.5px solid #0c1c24;
+}
+@-webkit-keyframes expandRight {
+  from {
+    width: 100%;
+  }
+  to {
+    width: 95vw;
+  }
+}
+@keyframes expandRight {
+  from {
+    width: 100%;
+  }
+  to {
+    width: 95vw;
+  }
+}
+#works ul .animate {
+  -webkit-animation: expandRight 3s forwards;
+          animation: expandRight 3s forwards;
 }
 #works ul li {
   width: 40vw;

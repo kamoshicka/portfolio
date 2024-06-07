@@ -29,3 +29,22 @@ const options = {
 slimes.forEach(slime => {
   slime.animate(keyframes, options);
 });
+
+// works-index
+document.addEventListener('DOMContentLoaded', function() {
+  function isElementInViewport(el) {
+    const rect = el.getBoundingClientRect();
+    return rect.top < window.innerHeight && rect.bottom >= 0;
+  }
+
+  function onScroll() {
+    document.querySelectorAll('.line').forEach(function(line) {
+      if (isElementInViewport(line)) {
+        line.classList.add('animate');
+      }
+    });
+  }
+
+  window.addEventListener('scroll', onScroll);
+  onScroll(); // 初期ロード時にもチェック
+});
