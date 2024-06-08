@@ -727,7 +727,7 @@ small {
     position: relative;
   }
 }
-@media screen and (min-width: 370px) and (max-width: 665px) {
+@media screen and (min-width: 100px) and (max-width: 665px) {
   .container {
     width: 100%;
   }
